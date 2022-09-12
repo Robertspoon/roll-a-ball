@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 766406785}
   - component: {fileID: 766406784}
   - component: {fileID: 766406788}
+  - component: {fileID: 766406789}
   m_Layer: 0
   m_Name: powerup
   m_TagString: Untagged
@@ -866,6 +867,18 @@ MonoBehaviour:
   multiplier: 3
   pickupEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
     type: 3}
+--- !u!114 &766406789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766406783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c43fd4381cb1b48ac44b9c4bde266b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &855799704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1848784090722110904, guid: 666271f84cb3b004db375c5054834f61,
@@ -2332,7 +2345,7 @@ PrefabInstance:
     - target: {fileID: 1848784090722110904, guid: 666271f84cb3b004db375c5054834f61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.58
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 1848784090722110904, guid: 666271f84cb3b004db375c5054834f61,
         type: 3}
@@ -2342,7 +2355,7 @@ PrefabInstance:
     - target: {fileID: 1848784090722110904, guid: 666271f84cb3b004db375c5054834f61,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.91
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 1848784090722110904, guid: 666271f84cb3b004db375c5054834f61,
         type: 3}

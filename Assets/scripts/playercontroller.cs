@@ -37,7 +37,7 @@ public class playercontroller : MonoBehaviour
         movementY = movementVector.y;
     }
 
-       void SetCountText()
+    void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
         if(count >= 13)
@@ -49,7 +49,7 @@ public class playercontroller : MonoBehaviour
 
 
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f,movementY);
 
@@ -58,18 +58,18 @@ public class playercontroller : MonoBehaviour
 
 
 
-       void Update()
+    void Update()
     {   
         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space)){
 
         
-         rb = gameObject.GetComponent<Rigidbody>();
+            rb = gameObject.GetComponent<Rigidbody>();
          
-         if (rb != null)
-        {
-          rb.velocity = new Vector3(0, upwardBounce, 0);
+            if (rb != null)
+            {
+                rb.velocity = new Vector3(0, upwardBounce, 0);
+            }
         }
-      }
     }   
      
 
@@ -89,5 +89,25 @@ public class playercontroller : MonoBehaviour
 
           SetCountText();
        }
+       else if(other.gameObject.CompareTag("Kill plane 1"))
+        {
+            rb.Sleep();
+            transform.position = new Vector3(-1.64f, 0.5f, 0);
+        }
+        else if (other.gameObject.CompareTag("kill plane 2"))
+        {
+            rb.Sleep();
+            transform.position = new Vector3(-1, 3.4f, 21);
+        }
+        else if (other.gameObject.CompareTag("kill plane 3"))
+        {
+            rb.Sleep();
+            transform.position = new Vector3(10, 3.4f, 20);
+        }
+        else if (other.gameObject.CompareTag("kill plane 4"))
+        {
+            rb.Sleep();
+            transform.position = new Vector3(24, 5.4f, 20.4f);
+        }
     }
 }

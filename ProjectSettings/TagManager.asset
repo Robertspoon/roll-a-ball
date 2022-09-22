@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - pickup
+  - Kill plane 1
+  - kill plane 2
+  - kill plane 3
+  - kill plane 4
   layers:
   - Default
   - TransparentFX

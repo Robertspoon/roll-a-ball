@@ -25,7 +25,7 @@ public class cameracontroller : MonoBehaviour
         transform.position = player.transform.position + offset;
 
         angleX += Input.GetAxis("Mouse X");
-        angleY = Mathf.Clamp(angleY -= Input.GetAxis("Mouse Y"), -89, 89);
+        angleY = Mathf.Clamp(angleY -= Input.GetAxis("Mouse Y"), -89, 0);
         radius = Mathf.Clamp(radius -= Input.mouseScrollDelta.y, 1, 50);
         if (angleX > 360)
         {

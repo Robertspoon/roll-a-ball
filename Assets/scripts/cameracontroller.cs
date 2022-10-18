@@ -26,7 +26,7 @@ public class cameracontroller : MonoBehaviour
 
         angleX += Input.GetAxis("Mouse X");
         angleY = Mathf.Clamp(angleY -= Input.GetAxis("Mouse Y"), -89, 89);
-        radius = Mathf.Clamp(radius -= Input.mouseScrollDelta.y, 1, 10);
+        radius = Mathf.Clamp(radius -= Input.mouseScrollDelta.y, 1, 50);
         if (angleX > 360)
         {
             angleX -= 360;
@@ -36,7 +36,7 @@ public class cameracontroller : MonoBehaviour
             angleX += 360;
         }
         Vector3 orbit = Vector3.forward * radius;
-        orbit = Quaternion.Euler(angleY, angleX, 0) * orbit;
+        orbit = Quaternion.Euler(angleY, angleX, 50) * orbit;
         transform.position = player.transform.position + orbit;
         transform.LookAt(player.transform.position);
     }

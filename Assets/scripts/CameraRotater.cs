@@ -21,7 +21,8 @@ public class CameraRotater : MonoBehaviour
         {
             Vector3 direction = previousPosition - cam.ScreenToViewportPoint(Input.mousePosition);
 
-            cam.transform.position = player.position; //new Vector3();
+            cam.transform.position = new Vector3();
+
 
             cam.transform.Rotate(new Vector3(1, 0, 0), direction.y * 180);
             cam.transform.Rotate(new Vector3(0, 1, 0), -direction.x * 180, Space.World);

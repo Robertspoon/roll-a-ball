@@ -12,6 +12,7 @@ public class playercontroller : MonoBehaviour
     public  float upwardBounce = 10f;
     public LayerMask groundLayers;
     public SphereCollider col;
+    public float maxSpeed = 15.0f;
   
     private Rigidbody rb;
     private int count;
@@ -70,7 +71,14 @@ public class playercontroller : MonoBehaviour
                 rb.velocity = new Vector3(0, upwardBounce, 0);
             }
         }
-    }   
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+       
+
+    }  
+    
      
 
      private bool IsGrounded()

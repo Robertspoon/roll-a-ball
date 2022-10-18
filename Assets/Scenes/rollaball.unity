@@ -1722,7 +1722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &752112331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4165,6 +4165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1312332789}
+  angleX: 0
+  angleY: 0
+  radius: 10
 --- !u!1 &1590794653
 GameObject:
   m_ObjectHideFlags: 0

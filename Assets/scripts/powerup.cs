@@ -7,6 +7,7 @@ public class powerup : MonoBehaviour
      
      public float multiplier = 1.4f;
      public float duration = 4f;
+     public float durationTillRespawn = 5.0f;
 
      public GameObject pickupEffect;
 
@@ -30,8 +31,12 @@ public class powerup : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Collider>().enabled = true;
+        yield return new WaitForSeconds(durationTillRespawn);
+
         player.transform.localScale /= multiplier;
-        Destroy(gameObject);
+        
     }
 
 }

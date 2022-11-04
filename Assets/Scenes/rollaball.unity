@@ -2633,7 +2633,7 @@ MonoBehaviour:
   multiplier: 0.5
   duration: 15
   durationTillRespawn: 5
-  pickupEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+  pickupEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}
 --- !u!114 &766406789
 MonoBehaviour:
@@ -3448,7 +3448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1021110029
 MonoBehaviour:
   m_ObjectHideFlags: 0

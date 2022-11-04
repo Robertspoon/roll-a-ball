@@ -97,25 +97,11 @@ public class playercontroller : MonoBehaviour
 
           SetCountText();
        }
-       else if(other.gameObject.CompareTag("Kill plane 1"))
+       if(other.gameObject.CompareTag("Kill plane 1"))
         {
             rb.Sleep();
             transform.position = new Vector3(-1.64f, 0.5f, 0);
         }
-        else if (other.gameObject.CompareTag("kill plane 2"))
-        {
-            rb.Sleep();
-            transform.position = new Vector3(-1, 3.4f, 21);
-        }
-        else if (other.gameObject.CompareTag("kill plane 3"))
-        {
-            rb.Sleep();
-            transform.position = new Vector3(10, 3.4f, 20);
-        }
-        else if (other.gameObject.CompareTag("kill plane 4"))
-        {
-            rb.Sleep();
-            transform.position = new Vector3(24, 5.4f, 20.4f);
-        }
+        
     }
 }

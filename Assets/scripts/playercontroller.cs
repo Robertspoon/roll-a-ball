@@ -41,7 +41,7 @@ public class playercontroller : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >= 13)
+        if(count >= 16)
         {
             winTextObject.SetActive(true);
         }
@@ -75,6 +75,8 @@ public class playercontroller : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
+
+        
        
 
     }  

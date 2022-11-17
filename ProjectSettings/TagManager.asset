@@ -10,6 +10,7 @@ TagManager:
   - kill plane 2
   - kill plane 3
   - kill plane 4
+  - KillPlane2
   layers:
   - Default
   - TransparentFX

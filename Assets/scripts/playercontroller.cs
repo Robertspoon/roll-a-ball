@@ -104,6 +104,11 @@ public class playercontroller : MonoBehaviour
             rb.Sleep();
             transform.position = new Vector3(-1.64f, 0.5f, 0);
         }
+       if(other.gameObject.CompareTag("KillPlane2"))
+        {
+            rb.Sleep();
+            transform.position = new Vector3(25.55f, 5.46f, 21.16f);
+        }
         
     }
 }

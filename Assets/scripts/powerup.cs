@@ -8,6 +8,7 @@ public class powerup : MonoBehaviour
      public float multiplier = 1.4f;
      public float duration = 4f;
      public float durationTillRespawn = 5.0f;
+     AudioSource myAudio;
 
      public GameObject pickupEffect;
 
@@ -16,6 +17,8 @@ public class powerup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+        myAudio = GetComponent<AudioSource>();
+        Invoke("playAudio", 12.0f);
            StartCoroutine (Pickup(other));
         }
     }  
@@ -37,6 +40,10 @@ public class powerup : MonoBehaviour
 
         player.transform.localScale /= multiplier;
         
+    }
+    void playAudio()
+    {
+        myAudio.Play();
     }
 
 }

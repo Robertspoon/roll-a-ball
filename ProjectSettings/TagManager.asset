@@ -11,6 +11,7 @@ TagManager:
   - kill plane 3
   - kill plane 4
   - KillPlane2
+  - JumpPowerUp
   layers:
   - Default
   - TransparentFX

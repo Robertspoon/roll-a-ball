@@ -109,6 +109,12 @@ public class playercontroller : MonoBehaviour
             rb.Sleep();
             transform.position = new Vector3(25.55f, 5.46f, 21.16f);
         }
+        if(other.gameObject.CompareTag("JumpPowerUp"))
+        {
+            upwardBounce = 20.0f;
+        }
         
     }
+
+   
 }

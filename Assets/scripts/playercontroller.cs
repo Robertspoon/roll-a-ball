@@ -55,7 +55,35 @@ public class playercontroller : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f,movementY);
 
         rb.AddForce(movement * speed);
+
+        //Get player input
+        float playerVerticalInput = Input.GetAxis("Vertical");
+        float playerHorizontalInput = Input.GetAxis("Horizontal");
+
+        //Get camera-normalized directional vectors
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward = forward.normalized;
+        right = right.normalized;
+
+        //Create direction-relative input vectors
+        Vector3 forwardRelativeVerticalInput = playerVerticalInput * forward;
+        Vector3 rightRelativeVerticalInput = playerHorizontalInput * right;
+
+        //create camera-relative movement
+        Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+
+        transform.Translate(cameraRelativeMovement, Space.World);
+
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
     }
+
+   
 
 
 
@@ -70,10 +98,6 @@ public class playercontroller : MonoBehaviour
             {
                 rb.velocity = new Vector3(0, upwardBounce, 0);
             }
-        }
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
 
         

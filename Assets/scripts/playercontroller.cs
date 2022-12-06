@@ -12,7 +12,7 @@ public class playercontroller : MonoBehaviour
     public  float upwardBounce = 10f;
     public LayerMask groundLayers;
     public SphereCollider col;
-    public float maxSpeed = 15.0f;
+    public float maxSpeed = 25.0f;
   
     private Rigidbody rb;
     private int count;
@@ -52,6 +52,23 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
+
+        rb.AddForce(movement * speed);
+
+
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+        RelativeCameraMovement();
+        
+    }
+
+    void RelativeCameraMovement()
+    {
+
         //Get player input
         float playerVerticalInput = Input.GetAxis("Vertical");
         float playerHorizontalInput = Input.GetAxis("Horizontal");
@@ -72,18 +89,7 @@ public class playercontroller : MonoBehaviour
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 
         transform.Translate(cameraRelativeMovement, Space.World);
-
-        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
-
-        rb.AddForce(movement * speed);
-
-
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-        }
     }
-
    
 
 

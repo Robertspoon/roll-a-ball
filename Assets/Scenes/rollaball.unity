@@ -8349,8 +8349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1312332789}
-  angleX: 0
-  angleY: 0
+  angleX: 180
+  angleY: 30
   radius: 10
 --- !u!1 &1590794653
 GameObject:

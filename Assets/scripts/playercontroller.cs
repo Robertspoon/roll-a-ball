@@ -52,10 +52,6 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
-
-        rb.AddForce(movement * speed);
-
         //Get player input
         float playerVerticalInput = Input.GetAxis("Vertical");
         float playerHorizontalInput = Input.GetAxis("Horizontal");
@@ -76,6 +72,11 @@ public class playercontroller : MonoBehaviour
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 
         transform.Translate(cameraRelativeMovement, Space.World);
+
+        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
+
+        rb.AddForce(movement * speed);
+
 
         if (rb.velocity.magnitude > maxSpeed)
         {

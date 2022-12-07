@@ -69,9 +69,33 @@ public class playercontroller : MonoBehaviour
 
         
     }
+    void RelativeCameraMovement()
+    {
 
-   
-   
+        //Get player input
+        float playerVerticalInput = Input.GetAxis("Vertical");
+        float playerHorizontalInput = Input.GetAxis("Horizontal");
+
+        //Get camera-normalized directional vectors
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward = forward.normalized;
+        right = right.normalized;
+
+        //Create direction-relative input vectors
+        Vector3 forwardRelativeVerticalInput = playerVerticalInput * forward;
+        Vector3 rightRelativeVerticalInput = playerHorizontalInput * right;
+
+        //create camera-relative movement
+        Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+
+        transform.Translate(cameraRelativeMovement, Space.World);
+    }
+
+
+
 
 
 

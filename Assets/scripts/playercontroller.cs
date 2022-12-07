@@ -36,6 +36,7 @@ public class playercontroller : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+
     }
 
     void SetCountText()
@@ -52,17 +53,20 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
-
-        rb.AddForce(movement * speed);
-
-
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
+
         RelativeCameraMovement();
+
+        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
+
+        rb.AddForce(movement * speed);
+       
+
+        
+
         
     }
 

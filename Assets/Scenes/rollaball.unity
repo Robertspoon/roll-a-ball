@@ -5139,7 +5139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   col: {fileID: 1312332790}
-  maxSpeed: 10
+  maxSpeed: 30
 --- !u!114 &1312332796
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -57,14 +57,13 @@ public class playercontroller : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
+        RelativeCameraMovement();
        
-        //RelativeCameraMovement();    
 
         Vector3 movement = new Vector3(movementX, 0.0f,movementY);
 
         rb.AddForce(movement * speed);
        
-        
 
         
 
@@ -93,7 +92,6 @@ public class playercontroller : MonoBehaviour
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 
         transform.Translate(cameraRelativeMovement, Space.World);
-
     }
 
 
@@ -113,6 +111,8 @@ public class playercontroller : MonoBehaviour
                 rb.velocity = new Vector3(0, upwardBounce, 0);
             }
         }
+
+        
        
 
     }  

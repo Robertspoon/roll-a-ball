@@ -57,7 +57,7 @@ public class playercontroller : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
-
+        RelativeCameraMovement();
        
 
         Vector3 movement = new Vector3(movementX, 0.0f,movementY);

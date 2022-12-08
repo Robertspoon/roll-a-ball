@@ -32,10 +32,10 @@ public class playercontroller : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
+        /*Vector2 movementVector = movementValue.Get<Vector2>();
 
         movementX = movementVector.x;
-        movementY = movementVector.y;
+        movementY = movementVector.y;*/
 
     }
 
@@ -53,21 +53,18 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-        }
-        //RelativeCameraMovement();
        
 
         Vector3 movement = new Vector3(movementX, 0.0f,movementY);
 
         rb.AddForce(movement * speed);
-       
-
         
-
-        
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+        RelativeCameraMovement();
+ 
     }
     void RelativeCameraMovement()
     {
@@ -91,7 +88,7 @@ public class playercontroller : MonoBehaviour
         //create camera-relative movement
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 
-        transform.Translate(cameraRelativeMovement, Space.World);
+        transform.Translate(cameraRelativeMovement / 8, Space.World);
     }
 
 
